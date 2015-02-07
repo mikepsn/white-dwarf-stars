@@ -102,7 +102,8 @@
 \interdisplaylinepenalty=2500
 \setlength{\IEEEilabelindent}{\IEEEilabelindentB}
 
-\markboth{630--364 Computational Physics}{} 
+%\markboth{630--364 Computational Physics}{} 
+\markboth{Structure of White Dwarf Stars. Michael Papasimeon. 1997}{} 
 
 
 %========================================================================
@@ -230,7 +231,7 @@ The corresponding scaled equations which are solved are equations 1 and 2.
         \item Modify the program, by adding a subroutine to solve
               the differential equations using the fourth order 
               Runge-Kutta method. A flow chart showing a rough outline
-              of the algorithm is shown below.
+              of the algorithm is shown in Figure~\ref{fig:runge-kutta}.
         \item The source code for the program (\texttt{star.f}) is
               in Appendix A.
         \item The code was written so that the program stops if
@@ -255,12 +256,12 @@ The corresponding scaled equations which are solved are equations 1 and 2.
 %------------------------------------------------------------------------
 
     \subsection{Comparing Euler and Runge-Kutta Methods}
-    The table below shows the values obtained for $\bar{M}$
+    Table~\ref{tbl:euler-runge-kutta} shows the values obtained for $\bar{M}$
     and $\bar{R}$ using Euler's and Runge-Kutta methods for
     a step size, $h = 0.01$ and central density $\rho_c = 10.0$.
 
     \begin{table}
-    \caption{Table 1 : Comparing Euler and Runge-Kutta for $h=0.01$.} 
+    \caption{Comparing Euler and Runge-Kutta for $h=0.01$.} 
     \label{tbl:euler-runge-kutta} 
     \begin{center}
     \begin{tabular}{c|ccc} \hline
@@ -271,11 +272,12 @@ The corresponding scaled equations which are solved are equations 1 and 2.
     \end{center}
     \end{table} 
 
-    We can see from the table that the Runge-Kutta method is more
-    accurate.
+    We can see from Table~\ref{tbl:euler-runge-kutta} 
+    that the Runge-Kutta method is more accurate.
 
     \subsubsection{Mass Profile}
-    The two plots below show the mass profile of a white dwarf star 
+    Figures~\ref{fig:mass-euler} and~\ref{fig:mass-runge-kutta}
+    show the mass profile of a white dwarf star 
     calculated using Euler's and the Runge-Kutta methods with:
     \begin{itemize}
         \item Step size $h = 0.01$
@@ -299,7 +301,8 @@ The corresponding scaled equations which are solved are equations 1 and 2.
     \end{figure} 
 
     \subsubsection{Density Profile}
-    The two plots below show the density profile of a white dwarf star 
+    Figures~\ref{fig:density-euler} and~\ref{fig:density-runge-kutta}
+    show the density profile of a white dwarf star 
     calculated using Euler's and the Runge-Kutta methods with:
     \begin{itemize}
         \item Step size $h = 0.01$
@@ -325,7 +328,8 @@ The corresponding scaled equations which are solved are equations 1 and 2.
 %------------------------------------------------------------------------
 
     \subsection{Investigating Stability with different step sizes}
-    The two tables below show values of $\bar{R}$ and $\bar{M}$, with
+    Table~\ref{tbl:R-M-euler} and~\ref{tbl:R-M-runge-kutta}
+    show values of $\bar{R}$ and $\bar{M}$, with
     the central density $\rho_c = 10.0$, for different step 
     sizes $h$ using both the Euler and the Runge-Kutta methods.
 
@@ -339,8 +343,8 @@ The corresponding scaled equations which are solved are equations 1 and 2.
     the step size.
 
     \begin{table}
-    \caption{Table 2 : $\bar{R}$ and $\bar{M}$ for different values of the 
-                  step size $h$, using Euler's method.} 
+    \caption{$\bar{R}$ and $\bar{M}$ for different values of the 
+             step size $h$, using Euler's method.} 
     \label{tbl:R-M-euler}
     \begin{center}
     \begin{tabular}{r|rr} \hline
@@ -356,8 +360,8 @@ The corresponding scaled equations which are solved are equations 1 and 2.
     \end{table} 
 
     \begin{table}
-    \caption{Table 3 : $\bar{R}$ and $\bar{M}$ for different values of the step 
-                  size $h$, using fourth order Runge-Kutta.}
+    \caption{$\bar{R}$ and $\bar{M}$ for different values of the step 
+             size $h$, using fourth order Runge-Kutta.}
     \label{tbl:R-M-runge-kutta} 
     \begin{center}
     \begin{tabular}{r|rr} \hline
@@ -373,20 +377,21 @@ The corresponding scaled equations which are solved are equations 1 and 2.
     \end{table} 
 
     \subsection{Investigation of mass and density at large central densities}
-    The plots on the next two pages show the mass and density profiles for
+    Figure~\ref{fig:mass-profiles} and~\ref{fig:density-profiles} 
+    plot the mass and density profiles for
     the white dwarf star for a range of values of the central density $\rho_c$,
     (with $Y_e = 1$), using the fourth order Runge-Kutta algorithm with
     a step size of $h = 0.01$.
-    These plots are the solutions, $\bar{\rho}(\bar{r})$ and $\bar{m}(\bar{r})$,
-    of~\ref{eq:density} and~ref{eq:mass}.
+    These plots are the solutions for $\bar{\rho}(\bar{r})$ and $\bar{m}(\bar{r})$,
+    of~\ref{eq:density} and~\ref{eq:mass}.
 
     Using the solutions to the differential equations we determine 
     $\bar{R}$ and $\bar{M}$ for the different values of $\rho_c$.
-    These results are shown in the table below.
+    These results are shown in Table~\ref{tbl:central-density}. 
 
     \begin{table}
-    \caption{Table 4 : $\bar{R}$ and $\bar{M}$ for $h = 0.01$ at different
-                  values of the central density $\rho_c$.} 
+    \caption{$\bar{R}$ and $\bar{M}$ for $h = 0.01$ at different
+              values of the central density $\rho_c$.} 
     \label{tbl:central-density} 
     \begin{center}
     \begin{tabular}{r|rr} \hline
@@ -410,9 +415,11 @@ The corresponding scaled equations which are solved are equations 1 and 2.
     degeneracy pressure. However, a smaller radius increases the gravitational
     field of the star, since we know from Newton's law of gravitation
     the gravitational force proportional to $1/r^2$.
+
     \begin{equation}
         F_g = -\frac{GmM}{r^2}
     \end{equation}
+
     Therefore, the greater the mass and the smaller the radius of the 
     star the greater the gravitational force of the star, pushing the star
     in on itself. 
@@ -475,111 +482,119 @@ The corresponding scaled equations which are solved are equations 1 and 2.
     \end{center}
     \end{figure*} 
 
-\section{Calculations for Sirius B and 40 Eri B} 
-For values of $Y_e \not= 1$, we have:
-\[ M(Y_e) = Y_{e}^2 \frac{M_0}{M_{sun}} \bar{M}(Y_e = 1)\]
-\[ R(Y_e) = Y_e \frac{R_0}{R_{sun}} \bar{R}(Y_e = 1)\]
-Using values from Koonin~[1] we can calculate:
+    \section{Calculations for Sirius B and 40 Eri B} 
 
-\[ \frac{M_0}{M_{sun}} = 
-    \frac{5.67 \times 10^{33} Y_e^2 gm}{1.98 \times 10^{33} gm} =  2.863636 Y_e^2\]
+    For values of $Y_e \not= 1$, we have:
+    \[ M(Y_e) = Y_{e}^2 \frac{M_0}{M_{sun}} \bar{M}(Y_e = 1)\]
+    \[ R(Y_e) = Y_e \frac{R_0}{R_{sun}} \bar{R}(Y_e = 1)\]
+    Using values from Koonin~[1] we can calculate:
 
-\[ \frac{R_0}{R_{sun}} = 
-    \frac{7.72 \times 10^8 Y_e cm}{6.95 \times 10^{10} cm} = 1.11079 \times 10^{-2} Y_e\]
+    \[ \frac{M_0}{M_{sun}} = 
+        \frac{5.67 \times 10^{33} Y_e^2 gm}{1.98 \times 10^{33} gm} =  2.863636 Y_e^2\]
 
-\subsection{Sirius B}
-\begin{itemize}
-    \item $M = 1.053 \pm 0.028$
-    \item $R = 0.0074 \pm 0.0006$
-\end{itemize}
-The table below shows the results for the radius $R$, for the program
-running for a number of different central densities. Here $R$ is:
+    \[ \frac{R_0}{R_{sun}} = 
+        \frac{7.72 \times 10^8 Y_e cm}{6.95 \times 10^{10} cm} = 1.11079 \times 10^{-2} Y_e\]
+
+    \subsection{Sirius B} 
+    
+    \begin{itemize} 
+        \item $M = 1.053 \pm 0.028$ 
+        \item $R = 0.0074 \pm 0.0006$ 
+    \end{itemize} 
+    
+    Table~\ref{tbl:results-sirius-b} shows the results for the radius $R$, for the program 
+    running for a number of different central densities. Here $R$ is:
+
     \[ R = Y_e \frac{R_0}{R_{sun}} \bar{R}(Y_e = 1) \]
 
-\begin{table} 
-\caption{Results for Sirius B} 
-\label{tbl:results-sirius-b} 
-\begin{center}
-\begin{tabular}{r|crr} \hline
-$\rho_c$    &   $\bar{R}(Y_e=1)$   & R ($Y_e = 0.5)$ & R ($Y_e = 0.464$)\\ \hline
-10.0        &   1.58        & 0.00877525071    & 0.00814343218   \\
-15.0        &   1.45        & 0.00877525071    & 0.00814343218   \\ 
-16.0        &   1.45        & 0.00805323641    & 0.00747340295 \\
-18.0        &   1.40        & 0.00777553860    & 0.00721569940\\ 
-20.0        &   1.37        & 0.00760891992    & 0.00706107727   \\ 
-22.0        &   1.34        & 0.00744230123    & 0.00690645514  \\ \hline
-\end{tabular}
-\end{center}
-\end{table} 
+    \begin{table} 
+        \caption{Results for Sirius B} 
+        \label{tbl:results-sirius-b} 
+        \begin{center}
+        \begin{tabular}{r|crr} \hline
+        $\rho_c$    &   $\bar{R}(Y_e=1)$   & R ($Y_e = 0.5)$ & R ($Y_e = 0.464$)\\ \hline
+        10.0        &   1.58        & 0.00877525071    & 0.00814343218   \\
+        15.0        &   1.45        & 0.00877525071    & 0.00814343218   \\ 
+        16.0        &   1.45        & 0.00805323641    & 0.00747340295 \\
+        18.0        &   1.40        & 0.00777553860    & 0.00721569940\\ 
+        20.0        &   1.37        & 0.00760891992    & 0.00706107727   \\ 
+        22.0        &   1.34        & 0.00744230123    & 0.00690645514  \\ \hline
+        \end{tabular}
+        \end{center}
+    \end{table} 
 
-We see from the table that the central density of Sirius B is:
-\begin{itemize}
-    \item $\rho_c = 22.0$ (Solar Units) for $Y_e = 0.5$ (Carbon)
-    \item $\rho_c = 16.0$ (Solar Units) for $Y_e = 0.464$ (Iron)
-\end{itemize}
-We see that these results are within error. Sirius B has a mass very similar
-to that of the Sun but a much smaller radius. This implies that the density
-of Sirius B is greater than the Sun, resulting in a smaller radius.
-What this means is that the atoms which make up Sirius B are likely to
-be heavier than those in the Sun. We are more likely to find greater
-amounts of heavy nuclei such as Carbon and Iron.
-Without knowing the exact proportions of Carbon and Iron in Sirius B,
-we can only estimate the the central density of this what dwarf is
-somewhere in the range $16.0 \leq \rho_c \leq 22.0$ in solar units.
+    We see from Table~\ref{tbl:results-sirius-b} that the central density of Sirius B is:
+    \begin{itemize}
+        \item $\rho_c = 22.0$ (Solar Units) for $Y_e = 0.5$ (Carbon)
+        \item $\rho_c = 16.0$ (Solar Units) for $Y_e = 0.464$ (Iron)
+    \end{itemize}
 
-\subsection{40 Eri B}
-\begin{itemize}
-      \item $M = 0.48 \pm 0.02 $
-      \item $R = 0.0124 \pm 0.0005 $
-\end{itemize}
-The table below shows the results for $R$, with the program running
-with different values of the central density.
+    We see that these results are within error. Sirius B has a mass very similar
+    to that of the Sun but a much smaller radius. This implies that the density
+    of Sirius B is greater than the Sun, resulting in a smaller radius.
+    What this means is that the atoms which make up Sirius B are likely to
+    be heavier than those in the Sun. We are more likely to find greater
+    amounts of heavy nuclei such as Carbon and Iron.
+    Without knowing the exact proportions of Carbon and Iron in Sirius B,
+    we can only estimate the the central density of this what dwarf is
+    somewhere in the range $16.0 \leq \rho_c \leq 22.0$ in solar units.
 
-\begin{table}
-\caption{Results for 40 Eri B} 
-\label{tbl:results-40-eri-b} 
-\begin{center}
-\begin{tabular}{r|crr} \hline
-$\rho_c$    &   $\bar{R}(Y_e=1)$   & R ($Y_e = 0.5)$   & R ($Y_e = 0.464$)\\ \hline
-1.0         &   2.49        & 0.0138293508      & 0.0128336368 \\
-1.2         &   2.41        & 0.0133850343      & 0.0124213111 \\
-1.5         &   2.31        & 0.0128296387      & 0.0119059040 \\
-1.7         &   2.25        & 0.0124964013      & 0.0115966597 \\
-2.0         &   2.19        & 0.0121631640       & 0.0112874155 \\
-3.0         &   2.02        & 0.0112189914      & 0.0104112234 \\
-5.0         &   1.83        & 0.0101637397      & 0.0094319499 \\
-6.0         &   1.76        & 0.0097749628     & 0.0090711649 \\ \hline
-\end{tabular}
-\end{center}
-\end{table} 
+    \subsection{40 Eri B}
 
-We see from the table that the central density of 40 Eri B is:
-\begin{itemize}
-    \item $\rho_c = 1.7$ (Solar Units) for $Y_e = 0.5$ (Carbon)
-    \item $\rho_c = 1.2$ (Solar Units) for $Y_e = 0.464$ (Iron)
-\end{itemize}
-We see that 40 Eri B has mass that is is approximately half that of
-the Sun, and a radius only 1\% that of the Sun's. However we see that
-the central density of 40 Eri B is in the range $1.2 \leq \rho_c \leq 1.7$
-in solar units. If a star half the like the Sun where to have it's radius 
-reduced to 1\% of it's original size, it's density would increase
-dramatically because:
-\[ \rho = \frac{M}{V} = \frac{M}{\frac{4}{3} \pi r^3} \]
-This suggests that that the atoms in 40 Eri B are lighter than those
-found in the Sun. It is likely that 40 Eri B consists almost totally
-of Hydrogen and Helium, with only traces of heavier nuclei.
+    \begin{itemize} 
+        \item $M = 0.48 \pm 0.02 $
+        \item $R = 0.0124 \pm 0.0005 $
+    \end{itemize}
 
-\section{References}
-    \begin{enumerate}
-        \item \emph{Computational Physics}, Koonin and Meredith
-    \end{enumerate} 
+    Table~\ref{tbl:results-40-eri-b} shows the results for $R$, with the program running
+    with different values of the central density.
+
+    \begin{table}
+        \caption{Results for 40 Eri B} 
+        \label{tbl:results-40-eri-b} 
+        \begin{center}
+            \begin{tabular}{r|crr} \hline
+            $\rho_c$    &   $\bar{R}(Y_e=1)$   & R ($Y_e = 0.5)$   & R ($Y_e = 0.464$)\\ \hline
+            1.0         &   2.49        & 0.0138293508      & 0.0128336368 \\
+            1.2         &   2.41        & 0.0133850343      & 0.0124213111 \\
+            1.5         &   2.31        & 0.0128296387      & 0.0119059040 \\
+            1.7         &   2.25        & 0.0124964013      & 0.0115966597 \\
+            2.0         &   2.19        & 0.0121631640       & 0.0112874155 \\
+            3.0         &   2.02        & 0.0112189914      & 0.0104112234 \\
+            5.0         &   1.83        & 0.0101637397      & 0.0094319499 \\
+            6.0         &   1.76        & 0.0097749628     & 0.0090711649 \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table} 
+
+    We see from Table~\ref{tbl:results-40-eri-b} that the central density of 40 Eri B is:
+    \begin{itemize}
+        \item $\rho_c = 1.7$ (Solar Units) for $Y_e = 0.5$ (Carbon)
+        \item $\rho_c = 1.2$ (Solar Units) for $Y_e = 0.464$ (Iron)
+    \end{itemize}
+
+    We see that 40 Eri B has mass that is is approximately half that of
+    the Sun, and a radius only 1\% that of the Sun's. However we see that
+    the central density of 40 Eri B is in the range $1.2 \leq \rho_c \leq 1.7$
+    in solar units. If a star half the like the Sun where to have it's radius 
+    reduced to 1\% of it's original size, it's density would increase
+    dramatically because:
+        \[ \rho = \frac{M}{V} = \frac{M}{\frac{4}{3} \pi r^3} \]
+    This suggests that that the atoms in 40 Eri B are lighter than those
+    found in the Sun. It is likely that 40 Eri B consists almost totally
+    of Hydrogen and Helium, with only traces of heavier nuclei.
+
+    \section{References}
+        \begin{enumerate}
+            \item \emph{Computational Physics}, Koonin and Meredith
+        \end{enumerate} 
 
 
 %========================================================================
 
-\onecolumn
-\appendix[Code Listing: star.f]
-\showcode{src/star.f} 
+    \onecolumn
+    \appendix[Code Listing: star.f]
+    \showcode{src/star.f} 
 
 \end{document}
 
